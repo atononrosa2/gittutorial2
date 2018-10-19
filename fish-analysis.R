@@ -16,3 +16,26 @@ fish %>%
                                 length < 300 ~ "small")) -> fish
 head(fish)
                         
+# histogram of scale length
+# fill is by length_cat
+# facet wrap ~ length_cat w/ themes
+# invite Chris to be colaborator to the repository
+
+
+fish %>%
+  ggplot() +
+  geom_histogram(aes(x = scalelength, fill = length_cat)) +
+  facet_wrap(~length_cat) +
+  theme_presentation()
+  #coord_cartesian(xlim = c(-0.5, 80), ylim = c(0, 30), expand = FALSE) +
+  #scale_x_continuous(breaks = seq(0,90, by = 10)) +
+  #scale_y_continuous(breaks = seq(0,30, by = 5), labels = letters[1:7]) + #be careful using "limits" because it drops data
+  #labs(x = "Value", y = "Frequency", title = "Histogram") +
+  #theme_classic() +
+  #theme(plot.title = element_text(hjust = 0.5, colour = "red"),
+        #plot.background = element_rect(fill = "lightgrey"),
+        #panel.background = element_rect(fill = "lightgrey"),
+        #axis.title = element_text(size = 18, colour = "chartreuse"),
+        #axis.text = element_text(size = 14))
+
+  
